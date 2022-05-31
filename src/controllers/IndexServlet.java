@@ -35,11 +35,11 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
-        List<Event> messages = em.createNamedQuery("getAllEvents", Event.class).getResultList();
+        List<Event> events = em.createNamedQuery("getAllEvents", Event.class).getResultList();
 
         em.close();
 
-        request.setAttribute("messages", messages);
+        request.setAttribute("events", events);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/events/index.jsp");
         rd.forward(request, response);
