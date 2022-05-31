@@ -7,11 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "messages")
-public class Message {
+@NamedQueries({
+    @NamedQuery(
+        name = "getAllEvents",
+        query = "SELECT m FROM Event AS m ORDER BY m.id DESC"
+    )
+})
+@Table(name = "events")
+public class Event {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
