@@ -14,12 +14,12 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
     @NamedQuery(
-        name = "getAllEvents",
-        query = "SELECT m FROM Event AS m ORDER BY m.id DESC"
+        name = "getAllTasks",
+        query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
     )
 })
-@Table(name = "events")
-public class Event {
+@Table(name = "tasks")
+public class Task {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

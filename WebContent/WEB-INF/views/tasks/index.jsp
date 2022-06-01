@@ -4,12 +4,12 @@
     <c:param name="content">
         <h2>タスク一覧</h2>
         <ul>
-            <c:forEach var="event" items="${events}">
+            <c:forEach var="task" items="${tasks}">
                 <li>
-                    <a href="${pageContext.request.contextPath}/show?id=${event.id}">
-                        <c:out value="${event.id}" />
+                    <a href="${pageContext.request.contextPath}/show?id=${task.id}">
+                        <c:out value="${task.id}" />
                     </a>
-                    ：<c:out value="${event.content}" />
+                    ：<c:out value="${task.content}" />
                 </li>
             </c:forEach>
         </ul>

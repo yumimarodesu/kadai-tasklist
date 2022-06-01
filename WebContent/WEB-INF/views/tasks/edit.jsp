@@ -3,7 +3,7 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${event != null}">
+            <c:when test="${task != null}">
                 <h2> ${event.id}つ目 のタスク内容編集ページ</h2>
 
                 <form method="POST" action="${pageContext.request.contextPath}/update">
@@ -11,7 +11,7 @@
                 </form>
 
                 <p><a href="${pageContext.request.contextPath}/index">タスク一覧に戻る</a></p>
-                <p><a href="#" onclick="confirmDestroy();">このメッセージを削除する</a></p>
+                <p><a href="#" onclick="confirmDestroy();">このタスクを削除する</a></p>
                 <form method="POST" action="${pageContext.request.contextPath}/destroy">
                     <input type="hidden" name="_token" value="${_token}" />
                 </form>
