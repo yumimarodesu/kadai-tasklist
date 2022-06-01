@@ -4,7 +4,7 @@
     <c:param name="content">
         <c:choose>
             <c:when test="${task != null}">
-                <h2> ${event.id}つ目 のタスク内容編集ページ</h2>
+                <h2> ${task.id}つ目 のタスク内容編集ページ</h2>
 
                 <form method="POST" action="${pageContext.request.contextPath}/update">
                     <c:import url="_form.jsp" />
